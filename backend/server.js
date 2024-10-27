@@ -5,13 +5,14 @@ import connectToMongoDB from "./db/connectToMongoDB.js";
 import cookieParser from "cookie-parser";
 import messageRoutes from './routes/message.routes.js'
 import userRoutes from './routes/user.route.js'
-
+import cors from 'cors'
 
 import jwt from "jsonwebtoken";
 import User from "./models/user.model.js";
 
 
 const app=express()
+app.use(cors());
 dotenv.config()
 const PORT= process.env.PORT ||5000
 app.use(express.json())
